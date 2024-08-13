@@ -1,0 +1,284 @@
+// MAINTENANCE10-01
+....
+
+// MAINTENANCE10-01
+// post correction
+Class Book
+    Declarations
+        string title
+        num pages
+        num price
+
+    // Constructor to initialize a Book object
+    Constructor Book(string t, num p)
+        title = t
+        pages = p
+        price = computePrice(p)
+    End Constructor
+
+    // Method to compute the price based on the number of pages
+    Function computePrice(num pages) As Num
+        num MIN_PAGES = 200
+        num HIGH_PRICE = 0.10
+        num LOW_PRICE = 0.08
+        if pages <= MIN_PAGES then
+            return pages * HIGH_PRICE
+        else
+            return (MIN_PAGES * HIGH_PRICE) + ((pages - MIN_PAGES) * LOW_PRICE)
+        endif
+    End Function
+End Class
+
+Program BookPricing
+    Declarations
+        num SIZE = 100
+        Book books[SIZE]
+        num sub = 0
+        string bookTitle
+        num bookPages
+
+    // Collect book data and create Book objects
+    While sub < SIZE
+        Output "Enter title: "
+        Input bookTitle
+        Output "Enter pages: "
+        Input bookPages
+
+        // Create a new Book object and store it in the array
+        Set books[sub] = New Book(bookTitle, bookPages)
+        sub = sub + 1
+    EndWhile
+
+    // Display all books data
+    Call displayBooks(books, SIZE)
+End Program
+
+// Function to display books information
+Subroutine displayBooks(Book[] books, num SIZE)
+    num x = 0
+    While x < SIZE
+        Output "Title: ", books[x].title
+        Output "Pages: ", books[x].pages
+        Output "Price: $", books[x].price
+        x = x + 1
+    EndWhile
+End Subroutine
+
+// DEBUG10-01
+...
+
+// DEBUG10-01
+// post correction
+class Date
+   Declarations
+      private num month
+      private num day
+      private num year
+
+   public void setDate(num mo, num da, num yr)
+      num HIGH_MONTH = 12
+      num HIGHEST_DAYS[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}  // February set to 28 for non-leap years
+      // Correct month values
+      if mo < 1 then
+         month = 1
+      else if mo > HIGH_MONTH then
+         month = HIGH_MONTH
+      else
+         month = mo
+      endif
+      // Correct day values
+      if da < 1 then
+         day = 1
+      else if da > HIGHEST_DAYS[month - 1] then  // Use month - 1 to match index
+         day = HIGHEST_DAYS[month - 1]
+      else
+         day = da
+      endif
+      year = yr
+   return
+
+   public void showDate()
+      output "Date: ", month, "/", day, "/", year
+   return
+endClass
+
+start
+   Declarations
+      Date birthday = new Date()
+      Date anniversary = new Date()
+      Date graduation = new Date()
+      Date party = new Date()
+
+   // Set dates through the setDate method
+   birthday.setDate(6, 24, 1982)
+   anniversary.setDate(10, 15, 2009)
+   graduation.setDate(14, 19, 2016)  // This will adjust the month to 12 (max valid month)
+   party.setDate(7, 35, 2015)         // This will adjust the day to 31 (max valid day in July)
+
+   // Output dates
+   output "Birthday "
+   birthday.showDate()
+   output "Anniversary "
+   anniversary.showDate()
+   output "Graduation "
+   graduation.showDate()
+   output "Party "
+   party.showDate()
+stop
+
+
+
+// DEBUG10-02
+...
+
+// DEBUG10-02
+// post correction
+class Invoice
+   Declarations
+      private num invoiceNumber
+      private string customer
+      private num balanceDue
+      private num tax
+
+   private void setInvoiceNumber(num number)
+      Declarations
+         num LOW_NUM = 1000
+         num HIGH_NUM = 9999
+      if number < LOW_NUM or number > HIGH_NUM then
+         invoiceNumber = 0
+      else
+         invoiceNumber = number
+      endif
+   return
+
+   private void setCustomer(string cust)
+      customer = cust
+   return
+
+   public void setBalanceDue(num balance)
+      balanceDue = balance
+      setTax()   // Correctly call the internal method without parameters
+   return
+
+   private void setTax()
+      Declarations
+         num TAX_RATE = 0.07
+      tax = balanceDue * TAX_RATE
+   return 
+
+   public void displayInvoice()
+      output "Invoice #", invoiceNumber
+      output "Customer: ", customer
+      output "Due: $", balanceDue
+      output "Tax: $", tax
+      output "Total Due: $", balanceDue + tax
+   return
+endClass
+
+start
+   Declarations
+      Invoice inv1 = new Invoice()
+      Invoice inv2 = new Invoice()
+      Invoice inv3 = new Invoice()
+
+   inv1.setInvoiceNumber(1244)
+   inv1.setCustomer("Brown")
+   inv1.setBalanceDue(1000.00)
+   inv1.displayInvoice()
+
+   inv2.setInvoiceNumber(77777)  // Will be corrected to 0
+   inv2.setCustomer("Jenkins")
+   inv2.setBalanceDue(2000.00)
+   inv2.displayInvoice()
+
+   inv3.setInvoiceNumber(888)    // Will be corrected to 0
+   inv3.setCustomer("Russell")
+   inv3.setBalanceDue(3000.00)
+   inv3.displayInvoice()
+stop
+
+
+
+// DEBUG10-03
+...
+
+// DEBUG10-03
+// post correction
+class Mortgage
+   Declarations
+      private num mortgageNumber
+      private string customer
+      private num price
+      private num downPayment
+      private num mortgageAmt
+      private num rate
+
+   public void setMortgageNumber(num number)
+      Declarations
+         num LOW_NUM = 10000
+         num HIGH_NUM = 59999
+      if number < LOW_NUM or number > HIGH_NUM then
+         mortgageNumber = 0
+      else
+         mortgageNumber = number
+      endif
+   return
+
+   public void setCustomer(string cust)
+      customer = cust
+   return
+
+   public void setPriceAndDown(num pr, num down)
+      if down > pr then
+         output "Down payment being reduced to price of house"
+         down = pr
+      endif
+      price = pr
+      downPayment = down
+      mortgageAmt = price - downPayment
+      setRate()
+   return
+
+   private void setRate()
+      Declarations
+         num LOW_RATE = 0.05
+         num HIGH_RATE = 0.06
+         num CUTOFF = 200000
+      if mortgageAmt > CUTOFF then
+         rate = LOW_RATE
+      else
+         rate = HIGH_RATE
+      endif
+   return 
+
+   public void displayMortgage()
+      output "Mortgage #", mortgageNumber
+      output "Customer: ", customer
+      output "Price of house: $", price
+      output "Down payment: $", downPayment
+      output "Mortgage amount: $", mortgageAmt
+      output "Rate: ", rate
+   return
+endClass
+
+start
+   Declarations
+      Mortgage loan1 = new Mortgage()
+      Mortgage loan2 = new Mortgage()
+      Mortgage loan3 = new Mortgage()
+
+   loan1.setMortgageNumber(34556)
+   loan1.setCustomer("Jones")
+   loan1.setPriceAndDown(100000, 20000)
+   loan1.displayMortgage()
+
+   loan2.setMortgageNumber(34)  // Will be set to 0 as invalid
+   loan2.setCustomer("Johnson")
+   loan2.setPriceAndDown(300000, 30000)
+   loan2.displayMortgage()
+
+   loan3.setMortgageNumber(88849)
+   loan3.setCustomer("Jordan")
+   loan3.setPriceAndDown(180000, 181000)  // Down payment will be reduced
+   loan3.displayMortgage()
+stop

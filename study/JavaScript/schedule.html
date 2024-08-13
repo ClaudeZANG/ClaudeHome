@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calendar</title>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+  }
+</style>
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Sunday</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="scheduleRow"></tr>
+  </tbody>
+</table>
+
+<script>
+  // Create an array with schedule information
+  let schedule = [
+    { day: "Sunday", team: "Team A", status: "Away" },
+    { day: "Monday", team: "Team B", status: "Away" },
+    { day: "Tuesday", team: "Team C", status: "Away" },
+    { day: "Wednesday", team: "Team D", status: "Away" },
+    { day: "Thursday", team: "", status: "Away" },
+    { day: "Friday", team: "", status: "Away" },
+    { day: "Saturday", team: "", status: "Away" }
+  ];
+
+  // Populate the calendar table
+  let scheduleRow = document.getElementById("scheduleRow");
+  for (let i = 0; i < schedule.length; i++) {
+    let cell = document.createElement("td");
+    cell.textContent = `${schedule[i].team} - ${schedule[i].status}`;
+    scheduleRow.appendChild(cell);
+  }
+</script>
+
+</body>
+</html>

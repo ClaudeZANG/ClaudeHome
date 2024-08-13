@@ -1,0 +1,46 @@
+package gui;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+public class TowerOfHanoiGame extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Tower of Hanoi Game");
+
+        // 登录和注册界面
+        VBox loginBox = new VBox();
+        TextField usernameField = new TextField();
+        PasswordField passwordField = new PasswordField();
+        Button loginButton = new Button("登录");
+        Button registerButton = new Button("注册");
+
+        loginBox.getChildren().addAll(new Label("用户名:"), usernameField, new Label("密码:"), passwordField, loginButton, registerButton);
+        
+        // 登录按钮事件
+        loginButton.setOnAction(e -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            // 调用 DBHelper 检查凭据
+        });
+
+        // 注册按钮事件
+        registerButton.setOnAction(e -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            // 调用 DBHelper 创建新用户
+        });
+
+        Scene loginScene = new Scene(loginBox, 300, 200);
+        primaryStage.setScene(loginScene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

@@ -1,0 +1,246 @@
+// DEBUG03-01
+// This pseudocode is intended to determine whether students have
+// passed or failed a course; student needs to average 60 or
+// more on two tests.
+start
+   Declarations
+      num firstTest
+      num secondTest
+      num average
+      num PASSING = 60
+   while firstTest not equal to 0
+      output "Enter first score or 0 to quit "
+      input firstTest
+      output "Enter second score"
+      input secondTest
+      average = (firstTest + secondTest) / 2
+      ouput "Average is ", average
+      if average >= PASSING then
+         output "Pass"
+      else
+         output "Fail"
+      endif
+   endwhile
+stop
+
+
+// post-correction
+// DEBUG03-01
+start
+   Declarations
+      num firstTest = 1
+      num secondTest
+      num average
+      num PASSING = 60
+   output "Enter first score or 0 to quit"
+   input firstTest
+   while firstTest not equal to 0
+      output "Enter second score"
+      input secondTest
+      average = (firstTest + secondTest) / 2
+      output "Average is ", average
+      if average >= PASSING then
+         output "Pass"
+      else
+         output "Fail"
+      endif
+      output "Enter first score or 0 to quit "
+      input firstTest
+   endwhile
+stop
+
+
+
+// DEBUG03-02
+// This pseudocode is intended to display employee net pay values.
+// All employees have a standard $45 deduction from their checks.
+// If an employee does not earn enough to cover the deduction,
+// an error message is displayed.
+start
+   Declarations
+      string name
+      num hours
+      num rate
+      string DEDUCTION = 45
+      string EOFNAME = "ZZZ"
+      num gross
+      num net
+   output "Enter first name or ", EOFNAME, " to quit"
+   input name
+   if name not equal to EOFNAME
+      output "Enter hours worked for ", name
+      input hours
+      output "Enter hourly rate for ", name
+      input rate
+      gross = hours * rate
+      net = gross - DEDUCTION
+      while net > 0 then
+         output "Net pay for ", name, " is ", net
+      else
+          output "Deductions not covered. Net is 0."
+      endwhile
+      output "Enter next name or ", EOFNAME, " to quit"
+      input name
+   endif
+   output "End of job"
+stop
+
+
+// post-correction
+// DEBUG03-02
+start
+   Declarations
+      string name
+      num hours
+      num rate
+      num DEDUCTION = 45
+      string EOFNAME = "ZZZ"
+      num gross
+      num net
+   output "Enter first name or ", EOFNAME, " to quit"
+   input name
+   while name not equal to EOFNAME
+      output "Enter hours worked for ", name
+      input hours
+      output "Enter hourly rate for ", name
+      input rate
+      gross = hours * rate
+      net = gross - DEDUCTION
+      if net > 0 then
+         output "Net pay for ", name, " is ", net
+      else
+         output "Deductions not covered. Net is 0."
+      endif
+      output "Enter next name or ", EOFNAME, " to quit"
+      input name
+   endwhile
+   output "End of job"
+stop
+
+
+
+// DEBUG03-03
+// This pseudocode is intended to display
+// employee net pay values. All employees have a standard
+// $45 deduction from their checks.
+// If an employee does not earn enough to cover the deduction,
+// an error message is displayed.
+// This example is modularized.
+start
+   Declarations
+      string name
+      string EOFNAME = ZZZZ
+   while name not equal to EOFNAME
+      housekeeping()
+   endwhile
+   while name not equal to EOFNAME
+      mainLoop()
+   endwhile
+   while name not equal to EOFNAME
+      finish()
+   endwhile
+stop
+
+housekeeping()
+   output "Enter first name or ", EOFNAME, " to quit "
+return
+
+mainLoop()
+   Declarations
+      num hours
+      num rate
+      num DEDUCTION = 45
+      num net
+   output "Enter hours worked for ", name
+   input hours
+   output "Enter hourly rate for ", name
+   input rate
+   gross = hours * rate
+   net = gross - DEDUCTION
+   if net > 0 then
+      output "Net pay for ", name, " is ", net
+   else
+      output "Deductions not covered. Net is 0."
+   endif
+   output "Enter next name or ", EOFNAME, " to quit "
+   input name
+return
+
+finish()
+   output "End of job"
+return
+
+
+// post-correction
+// DEBUG03-03
+start
+   Declarations
+      string name
+      string EOFNAME = "ZZZZ"
+   housekeeping(name, EOFNAME)
+   while name not equal to EOFNAME
+      mainLoop(name, EOFNAME)
+      housekeeping(name, EOFNAME)
+   endwhile
+   finish()
+stop
+
+housekeeping(ByRef name, EOFNAME)
+   output "Enter first name or ", EOFNAME, " to quit "
+   input name
+return
+
+mainLoop(ByRef name, EOFNAME)
+   Declarations
+      num hours
+      num rate
+      num DEDUCTION = 45
+      num gross
+      num net
+   output "Enter hours worked for ", name
+   input hours
+   output "Enter hourly rate for ", name
+   input rate
+   gross = hours * rate
+   net = gross - DEDUCTION
+   if net > 0 then
+      output "Net pay for ", name, " is ", net
+   else
+      output "Deductions not covered. Net is 0."
+   endif
+return
+
+finish()
+   output "End of job"
+return
+
+
+
+
+Choose a simple children’s game and describe its logic. Then create a text file with pseudocode.
+
+start
+   Declarations
+      string playerChoice
+      string computerChoice
+      string choices[] = {"Rock", "Paper", "Scissors"}
+      num computerIndex
+   while playerChoice not equal to "Exit"
+      output "Choose Rock, Paper, Scissors, or type Exit to quit:"
+      input playerChoice
+      if playerChoice not equal to "Exit"
+         computerIndex = Random(0, 2) // Randomly select 0, 1, or 2
+         computerChoice = choices[computerIndex]
+         output "Computer chooses ", computerChoice
+         if playerChoice equal to computerChoice
+            output "It's a tie!"
+         else if (playerChoice equal to "Rock" and computerChoice equal to "Scissors") or
+                 (playerChoice equal to "Scissors" and computerChoice equal to "Paper") or
+                 (playerChoice equal to "Paper" and computerChoice equal to "Rock")
+            output "You win!"
+         else
+            output "You lose!"
+      endif
+   endwhile
+   output "Game over."
+stop

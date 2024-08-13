@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Parser</title>
+</head>
+<body>
+<script>
+// Ask for URL input
+var url = prompt("Enter a URL with the format protocol://part1.part2.….extension");
+
+// Split the URL into an array
+var parts = url.split('://')[1].split('.');
+
+// Print the array elements
+document.write("<h2>URL Parts:</h2>");
+document.write("<p><strong>Protocol:</strong> " + parts[0] + "</p>");
+for (var i = 1; i < parts.length - 1; i++) {
+    document.write("<p><strong>Part " + i + ":</strong> " + parts[i] + "</p>");
+}
+document.write("<p><strong>Extension:</strong> " + parts[parts.length - 1] + "</p>");
+</script>
+</body>
+</html>

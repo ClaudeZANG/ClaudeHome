@@ -1,0 +1,40 @@
+package final_project;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+public class Field {
+    private int length;
+    private List<Vehicle> vehicles;
+
+    public Field(int length, int numVehicles) {
+        this.length = length;
+        this.vehicles = new ArrayList<>();
+
+        // 随机生成车辆并放置在字段中
+        Random rand = new Random();
+        for (int i = 0; i < numVehicles; i++) {
+            int x = rand.nextInt(length);
+            int y = rand.nextInt(length);
+            // 这里可以随机生成不同类型的车辆
+            if (i % 4 == 0) {
+                vehicles.add(new Car(x, y));
+            } else if (i % 4 == 1) {
+                vehicles.add(new Truck(x, y));
+            } else if (i % 4 == 2) {
+                vehicles.add(new SportsCar(x, y));
+            } else {
+                vehicles.add(new Tractor(x, y));
+            }
+        }
+    }
+
+    public void kill(Vehicle vehicle) {
+        vehicle.alive = false;
+    }
+
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+}

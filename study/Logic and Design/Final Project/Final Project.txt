@@ -1,0 +1,113 @@
+// login process:
+Start
+    Display login screen
+    Set attempt counter to 0
+    While attempt counter < 3
+        Input username, PIN
+        If username and PIN are valid Then
+            Proceed to main transactions screen
+            Exit loop
+        Else
+            Display error message
+            Increment attempt counter
+        End If
+    End While
+    If attempt counter = 3 Then
+        Display lockout message
+        End session
+    End If
+End
+
+
+// Main Trading Screen:
+Start
+    Display main transaction options (Deposit, Withdrawal, Transfer, Bill Payment)
+    Select transaction type
+    Case of transaction type:
+        "Deposit":
+            Call ProcessDeposit()
+        "Withdrawal":
+            Call ProcessWithdrawal()
+        "Transfer":
+            Call ProcessTransfer()
+        "Bill Payment":
+            Call ProcessBillPayment()
+    End Case
+    Update balance and display results
+    Ask "Perform another transaction?"
+    If Yes Then
+        Repeat main transaction options
+    Else
+        End
+    End If
+End
+
+ProcessDeposit()
+    Input amount
+    Validate and update balance
+    Display result
+Return
+
+ProcessWithdrawal()
+    Input amount
+    Check against balance and machine cash availability
+    Validate and update balance
+    Display result
+Return
+
+ProcessTransfer()
+    Input amount and target account type
+    Validate balances and transfer
+    Display result
+Return
+
+ProcessBillPayment()
+    Input amount
+    Validate balance, deduct fee, update balance
+    Display result
+Return
+
+
+// Administrator Screens
+Start
+    Display administrator options (Pay Interest, Refill Cash, Take Out of Service, Print Report)
+    Select admin task
+    Case of admin task:
+        "Pay Interest":
+            Call ProcessPayInterest()
+        "Refill Cash":
+            Call RefillATMCash()
+        "Take Out of Service":
+            Call TakeATMOutOfService()
+        "Print Report":
+            Call PrintAccountsReport()
+    End Case
+    Ask "Perform another admin task?"
+    If Yes Then
+        Repeat administrator options
+    Else
+        End
+    End If
+End
+
+ProcessPayInterest()
+    Calculate and apply interest to savings accounts
+    Display result
+Return
+
+RefillATMCash()
+    Refill cash in ATM, not exceeding $20,000 limit
+    Display result
+Return
+
+TakeATMOutOfService()
+    Set ATM status to out of service
+    Display result
+Return
+
+PrintAccountsReport()
+    Generate and print report of all accounts
+    Display result
+Return
+
+

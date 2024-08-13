@@ -1,0 +1,22 @@
+package logic;
+
+public class GameLogic {
+    private int[][] pegs;
+    private int numDisks;
+
+    public GameLogic(int numPegs, int numDisks) {
+        this.pegs = new int[numPegs][numDisks];
+        this.numDisks = numDisks;
+        // 初始化汉诺塔状态
+    }
+
+    public boolean moveDisk(int fromPeg, int toPeg) {
+        // 实现盘子移动逻辑
+        return true;
+    }
+
+    public boolean isGameSolved() {
+        // 检查游戏是否完成
+        return false;
+    }
+}

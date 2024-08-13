@@ -1,0 +1,161 @@
+// MAINTENANCE09-01
+....
+
+// MAINTENANCE09-01
+// post correction
+Program Payroll
+    Declarations
+        string name
+        num hours
+        num payRate
+        num gross
+
+    // Get user inputs using methods
+    Set name = getName()
+    Set hours = getHours()
+    Set payRate = getPayRate()
+
+    // Compute gross pay
+    Set gross = computeGross(hours, payRate)
+
+    // Output the result
+    Output name, " earned $", gross
+End Program
+
+Function getName() As String
+    Declarations
+        string name
+    Output "Input name >> "
+    Input name
+    Return name
+End Function
+
+Function getHours() As Num
+    Declarations
+        num hours
+    Output "Input hours worked >> "
+    Input hours
+    Return hours
+End Function
+
+Function getPayRate() As Num
+    Declarations
+        num payRate
+    Output "Input pay rate >> "
+    Input payRate
+    Return payRate
+End Function
+
+Function computeGross(hours, payRate) As Num
+    Return hours * payRate
+End Function
+
+
+
+// DEBUG09-01
+....
+
+// DEBUG09-01
+// post correction
+Program Main
+    Declarations
+        num payRate
+        num newPay
+        num RAISE_FACTOR = 0.10
+
+    // Display instructions to the user
+    Call showInstructions()
+
+    // Get the current pay rate from the user
+    Output "Enter your current pay rate: "
+    Input payRate
+
+    // Calculate the new pay rate with a 10% raise
+    newPay = payRate + payRate * RAISE_FACTOR
+
+    // Display the new pay rate
+    Output "Your new pay rate will be $", newPay
+End Program
+
+// Function to show instructions to the user
+Subroutine showInstructions()
+    Output "Enter your current pay rate in dollars and cents."
+    Output "Do not use a dollar sign - "
+    Output "Use digits and a decimal point only."
+End Subroutine
+
+
+
+// DEBUG09-02
+...
+
+// DEBUG09-02
+// post correction
+Program Main
+    Declarations
+        num firstNumber
+        num secondNumber
+
+    // Get the first and second numbers from the user
+    Output "Input first number >> "
+    Input firstNumber
+    Output "Input second number >> "
+    Input secondNumber
+
+    // Compute and display the product of the two numbers
+    Call computeProduct(firstNumber, secondNumber)
+End Program
+
+// Function to compute and display the product of two numbers
+Subroutine computeProduct(num first, num second)
+    Declarations
+        num answer
+    answer = first * second
+    Output first, " times ", second, " is ", answer
+End Subroutine
+
+
+
+
+
+// DEBUG09-03
+...
+
+// DEBUG09-03
+// post correction
+Program Main
+    Declarations
+        num LENGTH = 4
+        num vals[LENGTH] = {33, 55, 77, 99}
+        num sub
+
+    // Output initial array
+    Output "At beginning of main() method..."
+    For sub = 0 To LENGTH - 1
+        Output vals[sub]
+    End For
+
+    // Call the method to reverse the array
+    Call reverseTheValues(vals)
+
+    // Output array after reversal
+    Output "At end of main() method.........."
+    For sub = 0 To LENGTH - 1
+        Output vals[sub]
+    End For
+End Program
+
+// Method to reverse the values in the array
+Subroutine reverseTheValues(num values[])
+    num temp
+
+    // Swap the first and the last elements
+    temp = values[0]
+    values[0] = values[3]
+    values[3] = temp
+
+    // Swap the second and the third elements
+    temp = values[1]
+    values[1] = values[2]
+    values[2] = temp
+End Subroutine

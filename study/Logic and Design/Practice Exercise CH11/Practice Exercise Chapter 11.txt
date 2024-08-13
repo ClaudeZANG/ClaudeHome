@@ -1,0 +1,212 @@
+// MAINTENANCE11-01
+....
+
+// MAINTENANCE11-01
+// post correction
+class Product
+   Declarations
+      private string idNum
+      private string description
+      private num price
+
+   public Product(string id, string descrip, num pr)
+      idNum = id
+      description = descrip
+      price = pr
+   return
+
+   public void setIdNum(string id)
+      idNum = id
+   return
+
+   public void setDescription(string des)
+      description = des
+   return
+
+   public void setPrice(num pr)
+      if pr < 0 then
+         price = 0
+      else
+         price = pr
+      endif
+   return
+
+   public string getIdNum()
+      return idNum
+   return
+
+   public string getDescription()
+      return description
+   return
+
+   public num getPrice()
+      return price
+   return
+endClass
+
+start
+   Declarations
+      num SIZE = 100
+      Product products[SIZE]
+      num x = 0
+      num total = 0
+      num avg
+      num highestPrice = 0
+      string highestId
+      string highestDescrip
+
+   while x < SIZE
+      products[x] = getData()
+      total = total + products[x].getPrice()
+      if products[x].getPrice() > highestPrice then
+         highestPrice = products[x].getPrice()
+         highestDescrip = products[x].getDescription()
+         highestId = products[x].getIdNum()
+      endif
+      x = x + 1
+   endwhile
+
+   avg = total / SIZE
+   output "The highest priced product is ", highestId, ", ", highestDescrip, " $", highestPrice
+   output "The average price of all products is $", avg
+stop
+
+Function Product getData()
+   Declarations
+      string id
+      string descrip
+      num price
+
+   output "Enter product ID: "
+   input id
+   output "Enter description: "
+   input descrip
+   output "Enter price: "
+   input price
+   return new Product(id, descrip, price)
+endFunction
+
+
+// DEBUG11-01
+...
+
+// DEBUG11-01
+// post correction
+class Patient
+   Declarations
+      private string idNum
+      private string lastName
+      private string firstName
+
+   // Public default constructor
+   public Patient()
+      idNum = "0000"
+      lastName = "XXXX"
+      firstName = "XXXX"
+   return
+
+   // Overloaded constructor that accepts string ID, last name, and first name
+   public Patient(string id, string last, string first)
+      idNum = id  
+      lastName = last
+      firstName = first
+   return
+
+   // Method to display patient information
+   public void display()
+      output "Patient #", idNum, " ", firstName, " ", lastName
+   return
+endClass
+
+start
+   Declarations
+      Patient patient1 = new Patient()  // Using default constructor
+      Patient patient2 = new Patient("234", "Lee", "Lydia")  // Using overloaded constructor
+   patient1.display()  // Displays default patient information
+   patient2.display()  // Displays Lydia Lee's information
+stop
+
+
+
+
+// DEBUG11-02
+...
+
+// DEBUG11-02
+// post correction
+class Building
+   Declarations
+      private string streetAddress
+      private num squareFeet
+
+   public string getAddress()
+      return streetAddress
+   end
+
+   public num getSquareFeet()
+      return squareFeet
+   end
+
+   public void setSquareFeet(num feet)
+      squareFeet = feet
+   end
+
+   public void setStreetAddress(string address)
+      streetAddress = address
+   end
+endClass
+
+class Hotel inheritsFrom Building
+   Declarations
+      private num numberOfRooms
+
+   public Hotel(string address, num sqFt, num rooms)
+      setStreetAddress(address)
+      setSquareFeet(sqFt)
+      numberOfRooms = rooms
+   end
+
+   public num getNumberOfRooms()
+      return numberOfRooms
+   end
+endClass
+
+start
+   Declarations
+      Hotel hotel = new Hotel("100 Main Street", 8000, 20)
+   output hotel.getAddress(), hotel.getSquareFeet(), hotel.getNumberOfRooms()
+stop
+
+
+
+
+// DEBUG11-03
+...
+
+// DEBUG11-03
+// post correction
+start
+   Declarations
+      num id = 0
+   output "This program gets your ID"
+   try
+      id = getIdNum()
+   catch(Exception mistake)
+      output mistake.message  // Assuming the exception carries a message
+      id = 0
+   endcatch
+   output "Your ID is ", id
+stop
+
+Function num getIdNum()
+   Declarations
+      num idNum
+      num LOW = 1000
+      num HIGH = 8999
+   output "Please enter ID number:"
+   input idNum
+   if idNum < LOW OR idNum > HIGH then
+      throw Exception("Invalid ID number. It must be between ", LOW, " and ", HIGH, ".")
+   endif
+   return idNum
+endFunction

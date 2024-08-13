@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shuttle Company Reservation</title>
+<style>
+/* Add CSS styles here */
+/* Example styles */
+input[type="text"], select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
+</head>
+<body>
+
+<h2>Shuttle Company Reservation</h2>
+
+<form id="reservationForm" onsubmit="return validateForm()">
+  <label for="date">Date:</label>
+  <input type="date" id="date" name="date" required>
+
+  <label for="time">Time:</label>
+  <input type="time" id="time" name="time" required>
+
+  <label for="pickup">Pick-up Location:</label>
+  <input type="text" id="pickup" name="pickup" required>
+
+  <label for="destination">Destination:</label>
+  <input type="text" id="destination" name="destination" required>
+
+  <label for="payment">Payment Method:</label>
+  <select id="payment" name="payment" required>
+    <option value="">Select Payment Method</option>
+    <option value="credit">Credit Card</option>
+    <option value="debit">Debit Card</option>
+    <option value="paypal">PayPal</option>
+  </select>
+
+  <input type="submit" value="Reserve Ticket">
+</form>
+
+<script>
+function validateForm() {
+  var date = document.getElementById('date').value;
+  var time = document.getElementById('time').value;
+  var pickup = document.getElementById('pickup').value;
+  var destination = document.getElementById('destination').value;
+  var payment = document.getElementById('payment').value;
+
+  if (!date || !time || !pickup || !destination || !payment) {
+    alert('Please fill in all fields.');
+    return false;
+  }
+
+  return true;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+// part - 1
+Start
+   Declare string policyNumber
+   Declare string policyType
+   Declare num premium
+
+   policyNumber = getPolicyNumber()
+   While policyNumber not equal to "QUIT"
+      policyType = getPolicyType()
+      premium = calculatePremium(policyType)
+      output "Policy Number: ", policyNumber, " Type: ", policyType, " Premium: $", premium
+      policyNumber = getPolicyNumber()
+   EndWhile
+   output "Program ended."
+Stop
+
+Method getPolicyNumber() returns string
+   Declare string num
+   output "Enter insurance policy number or QUIT to end: "
+   input num
+   return num
+End Method
+
+Method getPolicyType() returns string
+   Declare string type
+   output "Enter policy type (health/auto): "
+   input type
+   While type not equal to "health" and type not equal to "auto"
+      output "Invalid input. Please enter 'health' or 'auto': "
+      input type
+   EndWhile
+   return type
+End Method
+
+Method calculatePremium(type) returns num
+   If type equal to "health" Then
+      return 550
+   Else
+      return 225
+   EndIf
+End Method
+
+
+
+// part - 2
+Start
+   // Main program logic remains the same
+   // Methods getPolicyNumber() and getPolicyType() remain unchanged
+   
+Method calculatePremium(type) returns num
+   If type equal to "health" Then
+      return calculateHealthPremium()
+   Else
+      return calculateAutoPremium()
+   EndIf
+End Method
+
+Method calculateHealthPremium() returns num
+   Declare string smoke
+   output "Do you smoke? (yes/no): "
+   input smoke
+   If smoke equal to "yes" Then
+      return 550
+   Else
+      return 345
+   EndIf
+End Method
+
+Method calculateAutoPremium() returns num
+   Declare num tickets
+   output "Enter the number of traffic tickets received in the last 3 years: "
+   input tickets
+   If tickets >= 3 Then
+      return 225
+   Else If tickets > 0 and tickets < 3 Then
+      return 190
+   Else
+      return 110
+   EndIf
+End Method

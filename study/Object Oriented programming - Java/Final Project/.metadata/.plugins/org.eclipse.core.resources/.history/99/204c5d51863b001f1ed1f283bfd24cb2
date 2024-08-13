@@ -1,0 +1,27 @@
+package final_project;
+
+public class SportsCar extends Vehicle {
+    private String type;
+
+    public SportsCar(int x, int y) {
+        super(x, y);
+        this.type = "SPORTSCAR";
+    }
+
+    @Override
+    public void move() {
+        // SportsCar 的移动逻辑
+        if (alive) {
+            if (Math.random() < 0.5) {
+                x += (Math.random() < 0.5 ? -3 : 3);
+            } else {
+                y += (Math.random() < 0.5 ? -3 : 3);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("SportsCar at (%d, %d) is %s", x, y, alive ? "alive" : "dead");
+    }
+}

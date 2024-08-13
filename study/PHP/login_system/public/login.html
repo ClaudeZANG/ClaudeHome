@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* 简单的样式，可根据需要调整 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .form-input {
+            margin-bottom: 10px;
+        }
+        #error-message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="login-form">
+    <div id="error-message"></div> <!-- 错误消息展示区域 -->
+    <form action="app/controllers/LoginController.php" method="POST">
+        <div class="form-input">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-input">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        if (error) {
+            let errorMessage = '';
+            if(error === 'invalid_credentials') {
+                errorMessage = '用户名或密码不正确，请重试。';
+            } else if(error === 'missing_credentials') {
+                errorMessage = '请输入用户名和密码。';
+            }
+            // 显示错误消息
+            document.getElementById('error-message').innerText = errorMessage;
+        }
+    });
+</script>
+
+</body>
+</html>

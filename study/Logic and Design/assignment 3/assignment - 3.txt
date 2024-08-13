@@ -1,0 +1,155 @@
+// part 1
+Class Order
+    // Private member variables
+    Private customerName As String
+    Private customerNumber As String
+    Private quantityOrdered As Integer
+    Private unitPrice As Double
+    
+    // Method to set the customer's name
+    Public Sub setCustomerName(name As String)
+        customerName = name
+    End Sub
+    
+    // Method to get the customer's name
+    Public Function getCustomerName() As String
+        Return customerName
+    End Function
+
+    // Method to set the customer's number
+    Public Sub setCustomerNumber(number As String)
+        customerNumber = number
+    End Sub
+
+    // Method to get the customer's number
+    Public Function getCustomerNumber() As String
+        Return customerNumber
+    End Function
+
+    // Method to set the quantity of items ordered
+    Public Sub setQuantityOrdered(quantity As Integer)
+        quantityOrdered = quantity
+    End Sub
+
+    // Method to get the quantity of items ordered
+    Public Function getQuantityOrdered() As Integer
+        Return quantityOrdered
+    End Function
+
+    // Method to set the unit price of the item
+    Public Sub setUnitPrice(price As Double)
+        unitPrice = price
+    End Sub
+
+    // Method to get the unit price of the item
+    Public Function getUnitPrice() As Double
+        Return unitPrice
+    End Function
+
+    // Method to compute the total price of the order
+    Public Function computePrice() As Double
+        Return quantityOrdered * unitPrice
+    End Function
+
+    // Method to display the order details
+    Public Sub display()
+        Print "Customer Name: " & customerName
+        Print "Customer Number: " & customerNumber
+        Print "Quantity Ordered: " & Str(quantityOrdered)
+        Print "Unit Price: $" & Format(unitPrice, "0.00")
+        Print "Total Price: $" & Format(computePrice(), "0.00")
+    End Sub
+End Class
+
+
+// part 2
+Class ShippedOrder Inherits Order
+    // Override the computePrice method to add shipping charges
+    Public Function computePrice() As Double
+        // Call the base class computePrice and add $4.00 for shipping and handling
+        Return MyBase.computePrice() + 4.00
+    End Function
+End Class
+
+
+// part 3
+// Main program starts here
+Program Main
+    Declare order As Order
+    Declare shippedOrder As ShippedOrder
+    
+    // Instantiate the Order object
+    Set order = New Order()
+    Display "Enter details for a standard order:"
+    Call UserInputForOrder(order)
+    Call order.display()
+    
+    // Instantiate the ShippedOrder object
+    Set shippedOrder = New ShippedOrder()
+    Display "Enter details for a shipped order:"
+    Call UserInputForOrder(shippedOrder)
+    Call shippedOrder.display()
+End Program
+
+// Function to handle user input for any order type
+Sub UserInputForOrder(order)
+    Declare name As String
+    Declare number As String
+    Declare quantity As Integer
+    Declare price As Double
+
+    // Prompt user for details
+    Display "Enter customer name:"
+    Input name
+    order.setCustomerName(name)
+
+    Display "Enter customer number:"
+    Input number
+    order.setCustomerNumber(number)
+
+    Display "Enter quantity ordered:"
+    Input quantity
+    order.setQuantityOrdered(quantity)
+
+    Display "Enter unit price:"
+    Input price
+    order.setUnitPrice(price)
+End Sub
+
+
+
+// part 4
+Program Main
+    Declare orders[10] As Order  // Array to store up to 10 orders
+    Declare index As Integer = 0
+    Declare customerName As String
+    Declare shipped As String
+    Declare order As Order
+
+    While index < 10
+        Display "Enter customer name (enter 'ZZZ' to finish):"
+        Input customerName
+        If customerName = "ZZZ" Then
+            Exit While
+        End If
+
+        Display "Will this order be shipped? (yes/no):"
+        Input shipped
+
+        If shipped = "yes" Then
+            Set order = New ShippedOrder()
+        Else
+            Set order = New Order()
+        End If
+
+        Call UserInputForOrder(order)
+        Set orders[index] = order
+        Increment index
+    End While
+
+    Display "All Order Details:"
+    For i = 0 To index - 1
+        Call orders[i].display()
+        Display "Total Price: $" & Format(orders[i].computePrice(), "0.00")
+    Next i
+End Program

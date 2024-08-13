@@ -1,0 +1,26 @@
+﻿@model AgeCalculator.Models.AgeViewModel
+@{
+    ViewData["Title"] = "Age Calculator";
+}
+
+<h2>Age Calculator</h2>
+
+<form asp-action="Calculate" method="post">
+    <div class="form-group">
+        <label for="birthDate">Enter your date of birth:</label>
+        <input type="date" class="form-control" id="birthDate" name="birthDate" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (Model != null)
+{
+    <h3>Age Calculation Result:</h3>
+    <p>Years: @Model.Years</p>
+    <p>Months: @Model.Months</p>
+    <p>Weeks: @Model.Weeks</p>
+    <p>Days: @Model.Days</p>
+    <p>Hours: @Model.Hours</p>
+    <p>Minutes: @Model.Minutes</p>
+    <p>Seconds: @Model.Seconds</p>
+}

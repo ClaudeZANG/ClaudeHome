@@ -1,0 +1,34 @@
+Start
+   Declare num hours = 1
+   Declare num wholesaleCost
+   Declare num totalCost
+   While hours > 0
+      Call InputData(hours, wholesaleCost)
+      If hours > 0 Then
+         Call CalculateCost(hours, wholesaleCost, totalCost)
+         Call DisplayResult(totalCost)
+      EndIf
+   EndWhile
+   Call EndProgram
+Stop
+
+Module InputData(ByRef hours, ByRef wholesaleCost)
+   Output "Enter the number of hours (or 0 to quit):"
+   Input hours
+   If hours > 0 Then
+      Output "Enter the wholesale cost of materials:"
+      Input wholesaleCost
+   EndIf
+Return
+
+Module CalculateCost(hours, wholesaleCost, ByRef totalCost)
+   totalCost = (hours * 30) + (wholesaleCost * 1.2)
+Return
+
+Module DisplayResult(totalCost)
+   Output "The total cost of the job is: ", totalCost
+Return
+
+Module EndProgram
+   Output "End of the program."
+Return

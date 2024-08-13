@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Feedback Form</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mathCalculation.html">Math Calculation</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="membershipDuration.html">Membership Duration</a></li>
+            <li><a href="location.html">Your Location</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form id="feedbackForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="feedbackOptions">Feedback Options:</label>
+            <select id="feedbackOptions">
+                <option value="website">Website Issue</option>
+                <option value="service">Service Feedback</option>
+                <option value="product">Product Quality</option>
+                <option value="support">Support Request</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="button" id="addFeedbackOption">Add Option</button>
+
+            <label for="postalCode">Postal Code:</label>
+            <input type="text" id="postalCode" name="postalCode" placeholder="123456" required>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="selectedOptions"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Learning Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="js/feedbackValidation.js"></script>
+</body>
+</html>

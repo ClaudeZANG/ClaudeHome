@@ -1,0 +1,99 @@
+#!/bin/bash
+
+# to initialize the game
+initialize_game() {
+	    echo "What's your name?"
+	    read USERNAME
+	    echo "Hello, $USERNAME. Time to play Hangman! Start guessing..."
+	    echo
+
+	    # array the words
+	    words=("apple" "banana" "orange" "strawberry" "pineapple" "watermelon" "grape" "kiwi" "pear" "peach")
+	    # generate a random index to select one word
+	    RANDOM_INDEX=$((RANDOM % ${#words[@]}))
+	    WORD="${words[$RANDOM_INDEX]}"
+	    # initialize the number of turns
+	    TURNS=10
+	    # Initialize the guessed word
+	    GUESSED_WORD=""
+	    # Initialize the list of guessed characters
+	    GUESSED_CHARACTERS=""
+	    # to indicate if success
+	    SUCCESS=false
+    }
+    
+# Function to display the current state of the word
+display_word() {
+	echo -n "Current word: "
+	for (( i=0; i<${#WORD}; i++ )); do
+		char="${WORD:$i:1}"
+		if [[ "$GUESSED_WORD" == *"$char"* ]]; then
+			echo -n "$char "
+		else
+			echo -n "_ "
+		fi
+	done
+	echo
+}
+
+# Function to check if a character is in the word
+check_character() {
+	local CHAR="$1"
+	if [[ "$WORD" == *"$CHAR"* && "$GUESSED_WORD" != *"$CHAR"* ]]; then
+		GUESSED_WORD+="$CHAR"	
+		(( TURNS-- ))
+	else
+		(( TURNS-- ))
+	fi
+
+	# check if all characters have been guessed
+	local all_guessed=true
+	for (( i=0; i<${#WORD}; i++ )); do
+		char="${WORD:$i:1}"
+		if [[ "$GUESSED_WORD" != *"$char"* ]]; then
+			all_guessed=false
+			break
+		fi
+	done
+
+	if $all_guessed; then
+		SUCCESS=true
+	elif [[ "$GUESSED_CHARACTERS" != *"$CHAR"* ]]; then
+		(( TURNS-- ))
+	fi
+}
+
+# Main function to run the game
+main() {
+	initialize_game
+
+	echo "The words contains ${#WORD} letters"
+	
+	while [[ $SUCCESS == false ]]; do
+		display_word
+
+		if [[ $TURNS -gt 0 && $SUCCESS == false ]]; then
+			echo "You have $TURNS guesses left."
+			read -p "Guess a character: " GUESS
+			GUESS="${GUESS,,}"
+
+			# Convert guess to lowercase
+			if [[ ${#GUESS} -eq 1 && "$GUESSED_CHARACTERS" != *"$GUESS"* ]]; then
+				GUESSED_CHARACTERS+="$GUESS"
+				check_character "$GUESS"
+			else
+				echo "Invalid guess. Please enter a single character you haven't guessed before."
+			fi
+		else
+			echo "Sorry, you're out of guesses. The word was \"$WORD\"."
+			return
+		fi
+	done
+
+	if [[ $SUCCESS == true ]]; then
+		echo "Congratulations, you're correct! The word was \"$WORD\"."
+	fi
+}
+
+# Run the main function
+main

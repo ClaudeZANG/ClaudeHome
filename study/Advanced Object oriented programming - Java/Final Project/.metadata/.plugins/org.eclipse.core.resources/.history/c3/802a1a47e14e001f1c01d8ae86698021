@@ -1,0 +1,61 @@
+package gui;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import db.DBHelper;
+
+public class TowerOfHanoiGame extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Tower of Hanoi Game");
+
+        // 登录和注册界面
+        VBox loginBox = new VBox();
+        TextField usernameField = new TextField();
+        PasswordField passwordField = new PasswordField();
+        Button loginButton = new Button("登录");
+        Button registerButton = new Button("注册");
+
+        loginBox.getChildren().addAll(new Label("用户名:"), usernameField, new Label("密码:"), passwordField, loginButton, registerButton);
+        
+        // 创建 DBHelper 实例
+        DBHelper dbHelper = new DBHelper();
+
+        // 登录按钮事件
+        loginButton.setOnAction(e -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            if (dbHelper.checkUserCredential(username, password)) {
+                System.out.println("登录成功！");
+            } else {
+                System.out.println("登录失败，用户名或密码错误！");
+            }
+        });
+
+        // 注册按钮事件
+        registerButton.setOnAction(e -> {
+            String username = usernameField.getText();
+            String password = passwordField.getText();
+            if (dbHelper.createNewUser(username, password)) {
+                System.out.println("注册成功！");
+            } else {
+                System.out.println("注册失败！");
+            }
+        });
+
+        Scene loginScene = new Scene(loginBox, 300, 200);
+        primaryStage.setScene(loginScene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

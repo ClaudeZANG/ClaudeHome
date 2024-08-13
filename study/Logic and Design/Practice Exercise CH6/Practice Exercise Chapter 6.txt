@@ -1,0 +1,358 @@
+// DEBUG06-01
+// A high school is holding a recycling competition,
+// and this program allows a user to enter a student's 
+// year in school (1 through 4) and number of cans collected
+// for recycling. Data is entered continuously until the user
+// enters 9 for the year.
+// After headings, output is four lines --
+// one for each school year class.
+start
+   Declarations
+      num year
+      num cans
+      num SIZE = 4
+      num QUIT = 9
+      num collectedArray[SIZE] = 0, 0, 0
+      string HEAD1 = "Can Recycling Report"
+      string HEAD2 = "Year      Cans Collected"
+   output "Enter year of student or ", QUIT, " to quit "
+   input year
+   while year <> QUIT
+      output "Enter number of cans collected "
+      input cans
+      collectedArray[year] = collectedArray[year] + cans
+      output "Enter year of student or ", QUIT, " to quit "
+      input year
+   endwhile
+   output HEAD1
+   output HEAD2
+   year = 1
+   while year < SIZE
+      output year, collectedArray[year]
+      year = year + 1
+   endwhile
+stop         
+
+
+// DEBUG06-01
+// post-correction
+start
+   Declarations
+      num year
+      num cans
+      num SIZE = 4
+      num QUIT = 9
+      num collectedArray[SIZE] = 0, 0, 0, 0  // 确保为四个年级初始化
+      string HEAD1 = "Can Recycling Report"
+      string HEAD2 = "Year      Cans Collected"
+   
+   output "Enter year of student (1-4) or ", QUIT, " to quit "
+   input year
+   while year <> QUIT
+      if year >= 1 and year <= 4 then
+         output "Enter number of cans collected "
+         input cans
+         collectedArray[year - 1] = collectedArray[year - 1] + cans  // 使用 year - 1 以适应数组索引
+      else
+         output "Invalid year. Please enter a correct year (1-4) or ", QUIT, " to quit."
+      endif
+      output "Enter year of student (1-4) or ", QUIT, " to quit "
+      input year
+   endwhile
+
+   output HEAD1
+   output HEAD2
+   for year from 1 to SIZE
+      output year, "       ", collectedArray[year - 1]  // 输出调整为 year 从1开始
+   endfor
+stop
+
+
+
+
+// DEBUG06-02
+// Program lets user input scores on four tests
+// Average is computed and letter grade is determined
+// Letter grades are based on 90 for an A, 80 for a B, and so on
+start
+   string name
+   num score 
+   num NUM_TESTS = 4
+   num NUM_RANGES = 5
+   num RANGES[NUM_RANGES] = 90, 80, 70, 60, 0
+   string QUIT = "ZZZZZ"
+   string GRADES[NUM_RANGES] = "A", "B", "C", "D", "F"
+   num total
+   num average
+   num sub
+   output "Enter student name or ", QUIT, " to quit "
+   input name
+   while name <> QUIT
+      sub = 0
+      total = 0
+      while sub < NUM_TESTS
+         output "Enter score "
+         input score
+         total = score
+      endwhile
+      sub = 0
+      while average < RANGES
+         sub = sub + 1
+      endwhile
+      letterGrade = GRADES[sub]
+      output name, letterGrade
+      output "Enter student name or ", QUIT, " to quit "
+      input lettergrade
+   endwhile
+stop
+
+
+// DEBUG06-02
+// post-correction
+start
+   Declarations
+      string name
+      num score
+      num NUM_TESTS = 4
+      num NUM_RANGES = 5
+      num RANGES[NUM_RANGES] = 90, 80, 70, 60, 0
+      string GRADES[NUM_RANGES] = "A", "B", "C", "D", "F"
+      num total
+      num average
+      num testIndex
+      string letterGrade
+      string QUIT = "ZZZZZ"
+   
+   output "Enter student name or ", QUIT, " to quit "
+   input name
+   while name <> QUIT
+      total = 0
+      for testIndex from 0 to NUM_TESTS - 1
+         output "Enter score for test ", testIndex + 1, ": "
+         input score
+         total = total + score
+      endfor
+      
+      average = total / NUM_TESTS
+      sub = 0
+      while average < RANGES[sub] and sub < NUM_RANGES - 1
+         sub = sub + 1
+      endwhile
+      
+      letterGrade = GRADES[sub]
+      output name, ": Average score = ", average, " Grade = ", letterGrade
+      output "Enter student name or ", QUIT, " to quit "
+      input name
+   endwhile
+   output "End of program"
+stop
+
+
+
+
+// DEBUG06-03
+// This program counts how many sales are made
+// in each of five categories of products
+start
+   Declarations
+      num category
+      num SIZE = 5
+      num QUIT = 9
+      num sales[SIZE] = 0, 0, 0, 0, 0
+      string HEAD1 = "Sales"
+      string HEAD2 = "Category   Number of Sales"
+   output "Enter category or ", QUIT, " to quit "
+   input category
+   while category = QUIT
+      if category > 1 AND category < SIZE then
+         sales[category - 1] = sales[category - 1] + 1
+      else
+         output "Invalid category"
+      endif
+   endwhile
+   output HEAD1
+   output HEAD2
+   while category < SIZE
+      output category + 1, sales[category]
+      category = category + 1
+   endwhile
+stop         
+
+
+
+
+
+// DEBUG06-03
+// post-correction
+start
+   Declarations
+      num category
+      num SIZE = 5
+      num QUIT = 9
+      num sales[SIZE] = 0, 0, 0, 0, 0
+      string HEAD1 = "Sales"
+      string HEAD2 = "Category   Number of Sales"
+   output "Enter category (1-5) or ", QUIT, " to quit "
+   input category
+   while category <> QUIT
+      if category >= 1 AND category <= SIZE then
+         sales[category - 1] = sales[category - 1] + 1
+      else
+         output "Invalid category. Please enter a valid category (1-5) or ", QUIT, " to quit."
+      endif
+      output "Enter next category or ", QUIT, " to quit "
+      input category
+   endwhile
+   
+   output HEAD1
+   output HEAD2
+   for category from 1 to SIZE
+      output category, "           ", sales[category - 1]
+   endfor
+stop
+
+
+
+
+
+// MAINTENANCE06-01
+// Sunrise Freight charges standard
+// per-pound shipping prices to the five states they serve
+// �- IL    IN    OH    MI    WI
+// -- 0.60  0.55  0.70  0.65  0.67
+// Modify this program to reduce its size
+// by using arrays
+start
+   Declarations
+      string state
+      num pounds
+      string foundIt
+      string BAD_STATE_MSG = "Sorry, we do not ship to �
+      string FINISH = �XXX�
+   
+   getReady()
+   while state <> FINISH
+      findPrice()
+   endwhile
+   finishUp()
+stop
+
+getReady()
+   output "Enter state or ", FINISH, " to quit"
+   input state
+return
+
+findPrice()
+   foundIt = "N"
+   if state = "IL" then
+      price = 0.60
+      foundIt = "Y"
+   else
+      if state = "IN" then
+         price = 0.55
+         foundIt = "Y"
+      else
+         if state = "MI" then
+            price = 0.70
+            foundIt = "Y"
+      else
+         if state = "OH" then
+            price = 0.65
+            foundIt = "Y"
+         else
+            if state = "WI" then
+               price = 0.67
+               foundIt = "Y"
+            endif
+         endif
+      endif
+   endif
+   if foundIt = "N" then
+      output BAD_STATE_MSG, state
+   else
+      output �Enter pounds �
+      input pounds
+      output �Cost per pound to ship to �, state, � is �, price
+      output �Total cost is �, price * pounds
+   endif
+   output "Enter next state or ", FINISH, " to quit"
+   input state
+return
+
+finishUp()
+   output "End of job"
+return
+
+
+
+
+
+// MAINTENANCE06-01
+// post-correction
+start
+   Declarations
+      string state // Stores the state entered by the user
+      num pounds // Stores the number of pounds to ship
+      num price // Stores the price per pound for the entered state
+      string STATES[5] = "IL", "IN", "OH", "MI", "WI" // Array of states served
+      num PRICES[5] = 0.60, 0.55, 0.70, 0.65, 0.67 // Corresponding shipping prices per pound for each state
+      num index // Index for looping through arrays
+      string BAD_STATE_MSG = "Sorry, we do not ship to " // Error message for unsupported states
+      string FINISH = "XXX" // Sentinel value to quit the program
+      bool foundIt = false // Boolean flag to indicate if the state is found
+   
+   getReady() // Initial user prompt
+   while state <> FINISH // Continue until the user enters the sentinel value to quit
+      findPrice() // Find the price based on the state and calculate total cost
+   endwhile
+   finishUp() // Ends the program
+stop
+
+getReady()
+   output "Enter state or ", FINISH, " to quit" // Prompt the user to enter a state or quit
+   input state // Read the user's input into 'state'
+return
+
+findPrice()
+   foundIt = false // Initialize foundIt to false at the start of the function
+   index = 0 // Initialize index to 0 to start from the first element of the arrays
+   while index < 5 and not foundIt // Loop through the array unless the state is found or end of array
+      if state = STATES[index] then // Check if the input state matches the current array element
+         price = PRICES[index] // If found, set the price to the corresponding element in PRICES
+         foundIt = true // Set foundIt to true indicating the state has been found
+      endif
+      index = index + 1 // Increment index to check the next element
+   endwhile
+   if not foundIt then // If the state was not found in the array
+      output BAD_STATE_MSG, state // Output an error message indicating the state is not served
+   else // If the state was found
+      output "Enter pounds: " // Prompt for the weight to ship
+      input pounds // Read the weight into 'pounds'
+      output "Cost per pound to ship to ", state, " is $", price // Display the price per pound
+      output "Total cost is $", price * pounds // Calculate and display the total cost
+   endif
+   output "Enter next state or ", FINISH, " to quit" // Prompt to enter another state or quit
+   input state // Read the next state or quit command
+return
+
+finishUp()
+   output "End of job" // Indicates the program has ended
+return
+
+
+
+// Design the logic for a program that allows a user to enter 20 numbers, then display them in the reverse order of entry. Present a flowchart diagram file (.jpg) and a text file for the pseudocode (.txt).
+Start
+    Initialize an array of size 20
+    For i from 1 to 20
+        Output "Enter number i: "
+        Input number
+        Store the number in the array at position i
+    EndFor
+
+    Output "The numbers in reverse order are:"
+    For i from 20 down to 1
+        Output array[i]
+    EndFor
+End
+

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Album>
+
+<h2>Albums</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var album in Model)
+        {
+            <tr>
+                <td>@album.Title</td>
+                <td>@album.Price</td>
+                <td>@album.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

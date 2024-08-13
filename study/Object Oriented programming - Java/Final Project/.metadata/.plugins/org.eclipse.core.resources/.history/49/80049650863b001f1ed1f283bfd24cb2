@@ -1,0 +1,27 @@
+package final_project;
+
+public class Tractor extends Vehicle {
+    private String type;
+
+    public Tractor(int x, int y) {
+        super(x, y);
+        this.type = "TRACTOR";
+    }
+
+    @Override
+    public void move() {
+        // Tractor 的移动逻辑
+        if (alive) {
+            if (Math.random() < 0.5) {
+                x += (Math.random() < 0.5 ? -2 : 2);
+            } else {
+                y += (Math.random() < 0.5 ? -2 : 2);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Tractor at (%d, %d) is %s", x, y, alive ? "alive" : "dead");
+    }
+}

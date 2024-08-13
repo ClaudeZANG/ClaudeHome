@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Location</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- 请确保替换 YOUR_API_KEY 为您的实际 Google Maps API 密钥 -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&v=weekly" async defer></script>
+</head>
+<body>
+    <header>
+        <h1>Your Current Location</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mathCalculation.html">Math Calculation</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="membershipDuration.html">Membership Duration</a></li>
+            <li><a href="location.html">Your Location</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="map" style="width:100%;height:400px;"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Online Learning Platform. All rights reserved.</p>
+    </footer>
+    <script src="js/location.js"></script>
+</body>
+</html>

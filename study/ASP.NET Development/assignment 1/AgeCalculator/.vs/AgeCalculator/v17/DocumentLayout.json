@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|c:\\users\\chuan\\onedrive\\s\\study\\asp.net development\\assignment 1\\agecalculator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|c:\\users\\chuan\\onedrive\\s\\study\\asp.net development\\assignment 1\\agecalculator\\views\\agecalculator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|solutionrelative:views\\agecalculator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|c:\\users\\chuan\\onedrive\\s\\study\\asp.net development\\assignment 1\\agecalculator\\models\\ageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|solutionrelative:models\\ageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|c:\\users\\chuan\\onedrive\\s\\study\\asp.net development\\assignment 1\\agecalculator\\controllers\\agecalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F2668F6-8E39-42EF-9C00-109332F68D03}|AgeCalculator.csproj|solutionrelative:controllers\\agecalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T10:35:35.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AgeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Models\\AgeViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\AgeViewModel.cs",
+              "ToolTip": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Models\\AgeViewModel.cs",
+              "RelativeToolTip": "Models\\AgeViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T10:26:19.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Views\\AgeCalculator\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AgeCalculator\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Views\\AgeCalculator\\Index.cshtml",
+              "RelativeToolTip": "Views\\AgeCalculator\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-07T10:25:42.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AgeCalculatorController.cs",
+              "DocumentMoniker": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Controllers\\AgeCalculatorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AgeCalculatorController.cs",
+              "ToolTip": "C:\\Users\\chuan\\OneDrive\\s\\study\\ASP.NET Development\\assignment 1\\AgeCalculator\\Controllers\\AgeCalculatorController.cs",
+              "RelativeToolTip": "Controllers\\AgeCalculatorController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T10:24:25.991Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+// Open MAINTENANCE05-01. Assume that the program is a working program in your organization and that it needs the modifications described in the opening comments. Your job is to alter the program to meet the new specifications.
+
+//post-correction
+// Open MAINTENANCE05-01
+start
+   Declarations
+      num year = 1
+      num copies = 100000
+      num price = 0.15
+      num totalIncome = 0
+      num COPIES_INCREASE = 0.04
+      num PRICE_INCREASE = 0.03
+      num TOTAL_YEARS = 10
+      
+   For year from 1 to TOTAL_YEARS
+      totalIncome = copies * price  // Calculate total income for the current year
+      output "Year: ", year, " Total Income: $", totalIncome
+      
+      copies = copies + (copies * COPIES_INCREASE)  // Increase the number of copies for next year
+      price = price + PRICE_INCREASE  // Increase the price per copy for next year
+   EndFor
+   
+   output "End of program"
+stop
+
+
+
+// DEBUG05-01
+// This program is supposed to display every fifth year
+// starting with 2017; that is, 2017, 2022, 2027, 2032,
+// and so on, for 30 years.
+start
+   Declarations
+      num year
+      num START_YEAR = 2017
+      num FACTOR = 5
+      num END_YEAR = 30
+   year = START_YEAR
+   while year <= END_YEAR
+      output year
+   endif
+stop
+
+
+// post-correction
+// DEBUG05-01
+start
+   Declarations
+      num year
+      num START_YEAR = 2017
+      num INTERVAL = 5
+      num DURATION = 30
+      num END_YEAR = START_YEAR + DURATION
+      
+   For year from START_YEAR to END_YEAR step INTERVAL
+      output year
+   EndFor
+stop
+
+
+
+
+// DEBUG05-02
+// A standard mortgage is paid monthly over 30 years.
+// This program is intended to output 360 payment coupons
+// for each new borrower at a mortgage company.
+// Each coupon lists the month number, year number,
+// and a friendly mailing reminder.
+start
+   Declarations
+      num MONTHS = 12
+      num YEARS = 30
+      string MSG = "Remember to allow 5 days for mailing"
+      num acctNum
+      num yearCounter
+   housekeeping()
+   while acctNUm <> QUIT
+      printCoupons()
+   endwhile
+   finish()
+stop
+
+housekeeping()
+   print "Enter account number or ", QUIT, " to quit "
+   input acctNum
+return
+
+printCoupons()
+   while yearCounter <= YEARS
+      while monthCounter <= MONTHS
+         print acctNum, monthCounter, yearCounter, MSG
+         monthCounter = monthCounter + 1
+      endwhile
+   endwhile
+   output "Enter account number or ", QUIT, " to quit "
+   input acctNum
+return
+
+finish()
+   output "End of job"
+return
+
+
+
+// post-correction
+// DEBUG05-02
+start
+   Declarations
+      num MONTHS = 12
+      num YEARS = 30
+      string MSG = "Remember to allow 5 days for mailing"
+      num acctNum
+      num yearCounter = 1  // 初始化为1，代表第一年
+      string QUIT = "9999"  // 特殊退出值
+   housekeeping()
+   while acctNum <> QUIT
+      printCoupons()
+      housekeeping()  // 再次调用，以输入下一个账号或退出
+   endwhile
+   finish()
+stop
+
+housekeeping()
+   print "Enter account number or ", QUIT, " to quit "
+   input acctNum
+return
+
+printCoupons()
+   while yearCounter <= YEARS
+      num monthCounter = 1  // 每次进入新的一年时重置为1
+      while monthCounter <= MONTHS
+         print acctNum, " Month: ", monthCounter, " Year: ", yearCounter, MSG
+         monthCounter = monthCounter + 1
+      endwhile
+      yearCounter = yearCounter + 1  // 完成一年的循环后，增加年计数器
+   endwhile
+return
+
+finish()
+   output "End of job"
+return
+
+
+
+
+// DEBUG05-03
+// This program displays every combination of three-digits
+start
+   Declarations
+     num digit1 = 0
+     num digit2 = 0
+     num digit3 = 0
+   while digit1 <= 9
+      while digit2 <= 9
+         while digit3 <= 9
+            output digit1, digit2, digit3
+            digit1 = digit1 + 1
+         endwhile
+         digit2 = digit2 + 1
+      endwhile
+      digit3 = digit3 + 1  
+   endwhile
+stop
+
+
+
+// post-correction
+// DEBUG05-03
+start
+   Declarations
+     num digit1 = 0
+     num digit2 = 0
+     num digit3 = 0
+   while digit1 <= 9
+      digit2 = 0  // Reset digit2 for each new digit1
+      while digit2 <= 9
+         digit3 = 0  // Reset digit3 for each new digit2
+         while digit3 <= 9
+            output digit1, digit2, digit3
+            digit3 = digit3 + 1  // Increment digit3 inside its own loop
+         endwhile
+         digit2 = digit2 + 1  // Increment digit2 inside its own loop
+      endwhile
+      digit1 = digit1 + 1  // Increment digit1 after completing all digit2 and digit3 combinations
+   endwhile
+stop
+
+
+
+// 4.In Session 2, you learned that many programming languages allow you to generate a random number between one and a limiting value (named LIMIT) by using a statement similar to randomNumber = random(LIMIT). In Session 4, you created the logic for a guessing game in which the application generates a random number and the player tries to guess it. Now, create the guessing game itself. After each guess, display a message indicating whether the player’s guess was correct, too high, or too low. When the player eventually guesses the correct number, display a count of the number of guesses that were required. Save the game file for submission. //
+
+Start
+   Declarations
+      num LIMIT = 100  // Define the upper limit for the random number
+      num randomNumber
+      num playerGuess
+      num guessCount = 0
+      string inputPrompt = "Guess a number between 1 and " + LIMIT + ": "
+      string tooHighMsg = "Your guess is too high. Try again!"
+      string tooLowMsg = "Your guess is too low. Try again!"
+      string victoryMsg = "Correct! You've guessed the number in "
+      
+   // Generate a random number between 1 and LIMIT
+   randomNumber = random(LIMIT) + 1  // Assuming 'random' generates between 0 and LIMIT-1
+   
+   // Main game loop
+   Do
+      output inputPrompt
+      input playerGuess
+      guessCount = guessCount + 1
+      
+      If playerGuess > randomNumber Then
+         output tooHighMsg
+      Else If playerGuess < randomNumber Then
+         output tooLowMsg
+      EndIf
+   While playerGuess not equal to randomNumber
+   
+   // Player guessed correctly
+   output victoryMsg + guessCount + " guesses."
+   
+   output "End of game."
+Stop

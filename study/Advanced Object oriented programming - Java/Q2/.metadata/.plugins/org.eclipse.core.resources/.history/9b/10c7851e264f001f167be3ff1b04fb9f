@@ -1,0 +1,39 @@
+package painter;
+
+import javafx.fxml.FXML;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+
+public class PainterController {
+    @FXML
+    private Canvas canvas;
+    @FXML
+    private ColorPicker colorPicker;
+
+    private Color brushColor = Color.BLACK;
+
+    public void initialize() {
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.setStroke(brushColor);
+        gc.setLineWidth(5);
+
+        canvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, event -> {
+            gc.lineTo(event.getX(), event.getY());
+            gc.stroke();
+        });
+
+        canvas.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
+            gc.beginPath();
+            gc.moveTo(event.getX(), event.getY());
+            gc.stroke();
+        });
+
+        colorPicker.setOnAction(event -> {
+            brushColor = colorPicker.getValue();
+            gc.setStroke(brushColor);
+        });
+    }
+}

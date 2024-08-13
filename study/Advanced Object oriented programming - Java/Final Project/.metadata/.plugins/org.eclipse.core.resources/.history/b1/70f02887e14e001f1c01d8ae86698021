@@ -1,0 +1,21 @@
+package logic;
+
+public class GameLogic {
+    private int numDisks = 3; // 盘子的数量
+
+    public void startGame() {
+        // 在这里实现游戏逻辑
+        System.out.println("游戏开始！");
+        moveDisks(numDisks, 'A', 'C', 'B');
+    }
+
+    private void moveDisks(int n, char fromPeg, char toPeg, char auxPeg) {
+        if (n == 1) {
+            System.out.println("移动盘子 1 从 " + fromPeg + " 到 " + toPeg);
+            return;
+        }
+        moveDisks(n - 1, fromPeg, auxPeg, toPeg);
+        System.out.println("移动盘子 " + n + " 从 " + fromPeg + " 到 " + toPeg);
+        moveDisks(n - 1, auxPeg, toPeg, fromPeg);
+    }
+}

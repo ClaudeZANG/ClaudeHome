@@ -1,0 +1,20 @@
+package final_project;
+
+public abstract class Vehicle {
+    protected int x;
+    protected int y;
+    protected boolean alive;
+
+    public Vehicle(int x, int y) {
+        this.x = x;
+        this.y = y;
+        this.alive = true;
+    }
+
+    public abstract void move() throws Exception;
+
+    @Override
+    public String toString() {
+        return String.format("Vehicle at (%d, %d) is %s", x, y, alive ? "alive" : "dead");
+    }
+}

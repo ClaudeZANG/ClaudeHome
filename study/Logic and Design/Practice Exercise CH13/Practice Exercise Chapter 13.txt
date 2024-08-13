@@ -1,0 +1,145 @@
+//Design a class named StockTransaction that holds a stock symbol (typically one to four characters), stock name, and price per share. Include methods to set and get the values for each data field. Create the class diagram and write the pseudocode that defines the class.//
+
+class StockTransaction
+    Declarations
+        private string symbol  // Stock symbol
+        private string name  // Stock name
+        private float pricePerShare  // Price per share
+
+    // Constructor
+    public Constructor(string sym, string nam, float price)
+        symbol = sym
+        name = nam
+        pricePerShare = price
+    end Constructor
+
+    // Set stock symbol
+    public void setSymbol(string sym)
+        symbol = sym
+    end
+
+    // Get stock symbol
+    public string getSymbol()
+        return symbol
+    end
+
+    // Set stock name
+    public void setName(string nam)
+        name = nam
+    end
+
+    // Get stock name
+    public string getName()
+        return name
+    end
+
+    // Set price per share
+    public void setPricePerShare(float price)
+        pricePerShare = price
+    end
+
+    // Get price per share
+    public float getPricePerShare()
+        return pricePerShare
+    end
+end class
+
+
+
+// Design an application that declares two StockTransaction objects and sets and displays their values.//
+
+start
+    // Declare two StockTransaction objects
+    StockTransaction stock1 = new StockTransaction("AAPL", "Apple Inc.", 150.00)
+    StockTransaction stock2 = new StockTransaction("MSFT", "Microsoft Corp.", 250.00)
+
+    // Display the details of the first stock
+    output "Stock 1: ", stock1.getSymbol(), ", ", stock1.getName(), ", $", stock1.getPricePerShare()
+
+    // Display the details of the second stock
+    output "Stock 2: ", stock2.getSymbol(), ", ", stock2.getName(), ", $", stock2.getPricePerShare()
+stop
+
+
+// Design an application that declares an array of 15 StockTransactions. Prompt the user for data for each of the objects, and then display all the values.//
+
+start
+    Declarations
+        num SIZE = 15
+        StockTransaction stocks[SIZE]
+        num i = 0
+
+    // Loop to get data for each StockTransaction
+    while i < SIZE
+        string sym, name
+        float price
+        
+        output "Enter stock symbol for stock ", i + 1, ":"
+        input sym
+        output "Enter stock name for stock ", i + 1, ":"
+        input name
+        output "Enter price per share for stock ", i + 1, ":"
+        input price
+        
+        stocks[i] = new StockTransaction(sym, name, price)
+        i = i + 1
+    end while
+
+    // Display all stock information
+    i = 0
+    while i < SIZE
+        output "Stock ", i + 1, ": ", stocks[i].getSymbol(), ", ", stocks[i].getName(), ", $", stocks[i].getPricePerShare()
+        i = i + 1
+    end while
+stop
+
+
+// Design an application that declares an array of 15 StockTransaction objects. Prompt the user for data for each object, and then pass the array to a method that determines and displays the two stocks with the highest and lowest price per share.//
+
+start
+    Declarations
+        num SIZE = 15
+        StockTransaction stocks[SIZE]
+        num i = 0
+
+    // Loop to get data for each StockTransaction
+    while i < SIZE
+        string sym, name
+        float price
+        
+        output "Enter stock symbol for stock ", i + 1, ":"
+        input sym
+        output "Enter stock name for stock ", i + 1, ":"
+        input name
+        output "Enter price per share for stock ", i + 1, ":"
+        input price
+        
+        stocks[i] = new StockTransaction(sym, name, price)
+        i = i + 1
+    end while
+
+    // Call method to determine highest and lowest prices
+    findHighestAndLowest(stocks)
+
+stop
+
+Function findHighestAndLowest(StockTransaction[] stocks)
+    Declarations
+        num highestIndex = 0
+        num lowestIndex = 0
+        num i = 1
+        
+    // Initialize highest and lowest to the first element's price
+    for i from 1 to SIZE - 1
+        if stocks[i].getPricePerShare() > stocks[highestIndex].getPricePerShare()
+            highestIndex = i
+        endif
+        if stocks[i].getPricePerShare() < stocks[lowestIndex].getPricePerShare()
+            lowestIndex = i
+        endif
+    end for
+
+    // Display highest and lowest price stocks
+    output "Highest price stock: ", stocks[highestIndex].getSymbol(), ", ", stocks[highestIndex].getName(), ", $", stocks[highestIndex].getPricePerShare()
+    output "Lowest price stock: ", stocks[lowestIndex].getSymbol(), ", ", stocks[lowestIndex].getName(), ", $", stocks[lowestIndex].getPricePerShare()
+end Function

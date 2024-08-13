@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+#messages {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003d82;
+}
+
+.message-time small {
+    display: block;
+    margin-bottom: 10px; /* 调整时间与消息之间的距离 */
+}
+
+.message {
+    margin-bottom: 20px; /* 调整消息之间的距离 */
+}

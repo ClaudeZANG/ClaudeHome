@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:controller="painter.PainterController"
+            xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx/8.0.112">
+    <top>
+        <ColorPicker fx:id="colorPicker" BorderPane.alignment="CENTER"/>
+    </top>
+    <center>
+        <Canvas fx:id="canvas" width="600" height="400"/>
+    </center>
+</BorderPane>

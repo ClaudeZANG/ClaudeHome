@@ -1,0 +1,27 @@
+package final_project;
+
+import java.util.List;
+
+public class Simulator {
+    private Field field;
+
+    public Simulator(Field field) {
+        this.field = field;
+    }
+
+    public void run(int turns) {
+        List<Vehicle> vehicles = field.getVehicles();
+        for (int turn = 0; turn < turns; turn++) {
+            System.out.println("Turn " + (turn + 1) + ":");
+            for (Vehicle vehicle : vehicles) {
+                try {
+                    vehicle.move();
+                    System.out.println(vehicle);
+                } catch (Exception e) {
+                    System.out.println(vehicle + " (DEAD)");
+                }
+            }
+            System.out.println();
+        }
+    }
+}

@@ -1,0 +1,2 @@
+ALTER TABLE Albums
+ADD Description NVARCHAR(MAX);

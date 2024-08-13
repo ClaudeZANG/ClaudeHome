@@ -1,0 +1,27 @@
+﻿@model IEnumerable<OnlineShopping.Models.Product>
+
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="@product.ImagePath" alt="@product.Name" class="img-responsive" />
+                <div class="caption">
+                    <h4>@product.Name</h4>
+                    <p>@product.Description</p>
+                    <p>Price: @product.Price</p>
+                    @using (Html.BeginForm("Add", "Cart", new { id = product.ProductId }))
+                    {
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>

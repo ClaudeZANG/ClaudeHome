@@ -1,0 +1,25 @@
+﻿@model IEnumerable<OnlineShopping.Models.Product>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="@product.ImagePath" alt="@product.Name" />
+                <div class="caption">
+                    <h4>@product.Name</h4>
+                    <p>@product.Description</p>
+                    <p>Price: @product.Price.ToString("C")</p>
+                    <p>
+                        <a href="@Url.Action("AddToCart", "Cart", new { productId = product.ProductId })" class="btn btn-primary" role="button">Add to Cart</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+    }
+</div>

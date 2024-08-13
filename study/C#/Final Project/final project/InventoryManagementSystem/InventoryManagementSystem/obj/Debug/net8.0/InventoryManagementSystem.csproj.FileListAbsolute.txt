@@ -1,0 +1,14 @@
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\bin\Debug\net8.0\InventoryManagementSystem.exe
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\bin\Debug\net8.0\InventoryManagementSystem.deps.json
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\bin\Debug\net8.0\InventoryManagementSystem.runtimeconfig.json
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\bin\Debug\net8.0\InventoryManagementSystem.dll
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\bin\Debug\net8.0\InventoryManagementSystem.pdb
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\InventoryManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\InventoryManagementSystem.AssemblyInfoInputs.cache
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\InventoryManagementSystem.AssemblyInfo.cs
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\InventoryManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\InventoryManagementSystem.dll
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\refint\InventoryManagementSystem.dll
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\InventoryManagementSystem.pdb
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\InventoryManagementSystem.genruntimeconfig.cache
+C:\Users\chuan\OneDrive\s\study\C#\Final Project\final project\InventoryManagementSystem\InventoryManagementSystem\obj\Debug\net8.0\ref\InventoryManagementSystem.dll

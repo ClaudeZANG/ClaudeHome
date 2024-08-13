@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+</head>
+<body>
+    <h1>Pizza Order Form</h1>
+
+    <!-- 创建披萨订单表单 -->
+    <form id="pizzaOrderForm" onsubmit="return validateForm()">
+        <!-- 选择披萨尺寸 -->
+        <label for="pizzaSize">Size:</label>
+        <select id="pizzaSize">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+
+        <!-- 选择配料 -->
+        <label>Choose Toppings:</label><br>
+        <input type="checkbox" id="toppingPepperoni" value="pepperoni">
+        <label for="toppingPepperoni">Pepperoni</label><br>
+        <input type="checkbox" id="toppingMushrooms" value="mushrooms">
+        <label for="toppingMushrooms">Mushrooms</label><br>
+        <!-- 其他配料类似 -->
+
+        <!-- 选择面团类型 -->
+        <label>Crust:</label><br>
+        <input type="radio" id="crustThin" name="crust" value="thin">
+        <label for="crustThin">Thin Crust</label><br>
+        <input type="radio" id="crustThick" name="crust" value="thick">
+        <label for="crustThick">Thick Crust</label><br>
+        <!-- 其他面团类型类似 -->
+
+        <!-- 选择支付方式 -->
+        <label>Payment Method:</label><br>
+        <input type="radio" id="paymentCash" name="payment" value="cash">
+        <label for="paymentCash">Cash</label><br>
+        <input type="radio" id="paymentCard" name="payment" value="card">
+        <label for="paymentCard">Credit Card</label><br>
+
+        <!-- 提交按钮 -->
+        <input type="submit" value="Place Order">
+    </form>
+
+    <!-- JavaScript 代码 -->
+    <script>
+        function validateForm() {
+            // 获取表单元素的值
+            var pizzaSize = document.getElementById("pizzaSize").value;
+            var toppings = document.querySelectorAll('input[type="checkbox"]:checked');
+            var crust = document.querySelector('input[name="crust"]:checked');
+            var paymentMethod = document.querySelector('input[name="payment"]:checked');
+
+            // 检查是否选择了尺寸、配料、面团类型和支付方式
+            if (pizzaSize === "" || toppings.length === 0 || crust === null || paymentMethod === null) {
+                alert("Please fill out all fields.");
+                return false;
+            }
+
+            // 获取选择的配料
+            var selectedToppings = [];
+            for (var i = 0; i < toppings.length; i++) {
+                selectedToppings.push(toppings[i].value);
+            }
+
+            // 显示用户选择
+            alert("Order Summary:\nSize: " + pizzaSize + "\nToppings: " + selectedToppings.join(", ") + "\nCrust: " + crust.value + "\nPayment Method: " + paymentMethod.value);
+
+            return true;
+        }
+    </script>
+</body>
+</html>

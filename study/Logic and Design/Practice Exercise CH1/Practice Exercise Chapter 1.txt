@@ -1,0 +1,138 @@
+// DEBUG01-01
+// This pseudocode is intended to describe
+// computing the price of an item on sale for 10% off
+start
+   input origPrice
+   discount = price * 0.25
+   finalPrice = origPrice - discnt
+   output finalPrice
+stop
+
+// post-correction
+// DEBUG01-01
+// This pseudocode is intended to describe
+// computing the price of an item on sale for 10% off
+start
+   input origPrice
+   discount = origPrice * 0.10 // Calculate the discount amount (10%)
+   finalPrice = origPrice - discount // Calculate the final price after discount with correct variable name
+   output finalPrice
+end
+
+// DEBUG01-02
+// This pseudocode is intended to compute the number
+// of miles per gallon you get with your automobile.
+start
+   input milesTraveled
+   input gallonsOfGasUsed
+   milesPerGallon = milesTraveled + gallonsOfGas
+   output milsperGallon
+start
+
+// post-correction
+// DEBUG01-02
+// This pseudocode is intended to compute the number
+// of miles per gallon you get with your automobile.
+start
+   input milesTraveled  // Get the number of miles traveled from user input
+   input gallonsOfGasUsed  // Get the number of gallons of gas used from user input
+   milesPerGallon = milesTraveled / gallonsOfGasUsed  // Calculate miles per gallon
+   output milesPerGallon
+end
+
+// DEBUG01-03
+// This pseudocode is intended to describe
+// computing the per day cost of your rent
+// in a 30-day month
+start
+   input rent
+   costPerDay = rent / 31
+   output rent
+stop
+
+// post-correction
+// DEBUG01-03
+// This pseudocode is intended to describe
+// computing the per day cost of your rent
+// in a 30-day month
+start
+   input rent  // Get the total rent for the month from user input
+   costPerDay = rent / 30  // Calculate the cost per day
+   output costPerDay  // Output the cost per day
+end
+
+// MAINTENANCE01-01
+// This program accepts a user's monthly pay
+// and rent, utilities, and grocery bills
+// and displays the amount available for discretionary spending
+// (which might be negative)
+// Modify the program to output the pay and the total bills
+// as well as the remaining discretionary amount
+
+start
+   input pay
+   input rent
+   input utilities
+   input groceries
+   discretionary = pay - rent - utlilites - groceries
+   output discretionary
+stop
+
+// post-correction
+// MAINTENANCE01-01
+// This program accepts a user's monthly pay
+// and rent, utilities, and grocery bills
+// and displays the amount available for discretionary spending
+// (which might be negative)
+// Modify the program to output the pay and the total bills
+// as well as the remaining discretionary amount
+
+start
+   input pay  // Get the user's monthly pay
+   input rent  // Get the monthly rent amount
+   input utilities  // Get the monthly utilities bill amount
+   input groceries  // Get the monthly grocery bill amount
+   totalBills = rent + utilities + groceries  // Calculate the total bills
+   discretionary = pay - totalBills  // Calculate the discretionary amount
+   output "Monthly pay: ", pay  // Output the monthly pay
+   output "Total bills: ", totalBills  // Output the total bills
+   output "Remaining discretionary amount: ", discretionary  // Output the remaining discretionary amount
+stop
+
+
+// Create the logic for a Mad Lib program that accepts four words from the input and then uses them to create and display a short joke or poem.
+// Mad Lib Program Logic
+
+start
+   // Step 1: Accept input
+   input word1
+   input word2
+   input word3
+   input word4
+   
+   // Step 2: Choose a template
+   template = selectTemplate()
+   
+   // Step 3: Fill the template
+   jokeOrPoem = fillTemplate(template, word1, word2, word3, word4)
+   
+   // Step 4: Display the result
+   output jokeOrPoem
+end
+
+// Function to select a template (can be random or predetermined)
+function selectTemplate()
+   // Return a predefined or randomly selected template
+   // For example:
+   return "Why did the [noun1] [verb1] [noun2]? Because it [verb2] [noun3]!"
+
+// Function to fill the template with words
+function fillTemplate(template, word1, word2, word3, word4)
+   // Replace placeholders in the template with the provided words
+   jokeOrPoem = replace(template, "[noun1]", word1)
+   jokeOrPoem = replace(jokeOrPoem, "[verb1]", word2)
+   jokeOrPoem = replace(jokeOrPoem, "[noun2]", word3)
+   jokeOrPoem = replace(jokeOrPoem, "[verb2]", word4)
+   
+   // Return the filled template
+   return jokeOrPoem

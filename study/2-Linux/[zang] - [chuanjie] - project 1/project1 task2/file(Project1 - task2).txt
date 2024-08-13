@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This shell script reads the number of lines in a text file and prints their counts
+
+# Set the file tyo be executable
+chmod +x task2.sh
+
+# User input text content for the sample file
+echo "Enter the text content to count lines & words(Press Ctrl+D to finish):"
+cat > sample.txt
+
+# Read the number of lines & words in the text file
+line_count=$(wc -l < sample.txt)
+word_count=$(wc -w < sample.txt)
+
+# Print the counts
+echo "Number of lines is: $line_count."
+echo "Number of words is: $word_count."
+
+# Provide appropriate file permission
+chmod 755 sample.txt
+
+
+~                                                                                                                       ~                                                                                                                       ~                                                                                                                       ~                                                                                                                       ~                                                                                                                       ~                                                                                                                       "task2.sh" 23L, 573B                                                                                  18,24         All
