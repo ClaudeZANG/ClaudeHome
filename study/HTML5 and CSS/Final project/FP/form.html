@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <img src="header-image.png" alt="Header Image" class="header-image">
+      <h1>Order Form</h1>
+    </div>
+  </header>
+
+  <!-- Form Section -->
+  <main>
+    <div class="form-container">
+      <form action="submit_order.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="address">Delivery Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="food">Select Food:</label>
+        <select id="food" name="food">
+          <option value="burger">Burger</option>
+          <option value="fries">Fries</option>
+          <option value="drinks">Drinks</option>
+          <option value="frankie">Frankie</option>
+          <option value="hotdog">Hot Dog</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required>
+
+        <label for="payment">Payment Method:</label>
+        <div class="payment-options">
+          <input type="radio" id="credit" name="payment" value="credit" required>
+          <label for="credit">Credit Card</label>
+          <input type="radio" id="cash" name="payment" value="cash">
+          <label for="cash">Cash</label>
+        </div>
+
+        <button type="submit" class="submit-button">Submit Order</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2024 DESI Rasoi - Surrey. All rights reserved.</p>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script>
+    // 获取URL参数并自动填充食物选项
+    const urlParams = new URLSearchParams(window.location.search);
+    const food = urlParams.get('food');
+  
+    if (food) {
+      document.getElementById('food').value = food;
+    }
+
+    // 表单提交前的客户端验证
+    document.querySelector("form").addEventListener("submit", function(event) {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
+      const quantity = document.getElementById("quantity").value;
+
+      let errorMessage = "";
+    
+      if (name.trim() === "") {
+        errorMessage += "Name is required.\n";
+      }
+    
+      if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)) {
+        errorMessage += "Invalid email address.\n";
+      }
+
+      if (phone.trim() === "" || !/^\d+$/.test(phone)) {
+        errorMessage += "Phone number is required and must contain only digits.\n";
+      }
+
+      if (address.trim() === "") {
+        errorMessage += "Address is required.\n";
+      }
+
+      if (quantity <= 0) {
+        errorMessage += "Quantity must be at least 1.\n";
+      }
+
+      if (errorMessage !== "") {
+        alert(errorMessage);
+        event.preventDefault();
+      }
+    });
+  </script>
+
+</body>
+</html>

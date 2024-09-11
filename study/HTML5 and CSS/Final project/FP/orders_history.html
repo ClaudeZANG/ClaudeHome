@@ -1,0 +1,94 @@
+<?php
+// 数据库连接信息
+$servername = "localhost";
+$username = "root";
+$password = ""; // 根据你的 MySQL 设置
+$dbname = "restaurant_orders"; // 确保已创建此数据库
+
+// 创建连接
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 检查连接是否成功
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// 查询订单
+$sql = "SELECT * FROM orders";
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order History</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <img src="header-image.png" alt="Header Image" class="header-image">
+      <h1>Order History</h1>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <div class="history-container">
+      <h2>All Orders</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Payment Method</th>
+            <th>Order Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+          if ($result->num_rows > 0) {
+              // 输出数据
+              while($row = $result->fetch_assoc()) {
+                  echo "<tr>";
+                  echo "<td>" . $row["id"] . "</td>";
+                  echo "<td>" . $row["name"] . "</td>";
+                  echo "<td>" . $row["email"] . "</td>";
+                  echo "<td>" . $row["phone"] . "</td>";
+                  echo "<td>" . $row["address"] . "</td>";
+                  echo "<td>" . $row["food"] . "</td>";
+                  echo "<td>" . $row["quantity"] . "</td>";
+                  echo "<td>" . $row["payment"] . "</td>";
+                  echo "<td>" . $row["order_date"] . "</td>";
+                  echo "</tr>";
+              }
+          } else {
+              echo "<tr><td colspan='9'>No orders found</td></tr>";
+          }
+          ?>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2024 DESI Rasoi - Surrey. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+
+<?php
+// 关闭数据库连接
+$conn->close();
+?>

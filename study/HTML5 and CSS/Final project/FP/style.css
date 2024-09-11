@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Header Styles */
+  .header-container {
+    text-align: center;
+    background-color: black;
+    padding: 20px;
+  }
+  
+  .header-image {
+    width: 100%;
+    max-height: 400px;
+  }
+  
+  .order-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .order-button:hover {
+    background-color: #e65b54;
+  }
+  
+  /* Main Section Layout */
+  .content-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  /* Left Section Styles */
+  .left-section {
+    width: 40%;
+    padding-right: 20px;
+  }
+  
+  .restaurant-info {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .opening-hours, .dining-options, .call-info {
+    margin-bottom: 10px;
+  }
+  
+  .dining-options span {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .call-info {
+    font-size: 18px;
+  }
+  
+  .map iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+  }
+  
+  /* Right Section Styles */
+  .right-section {
+    width: 55%;
+  }
+  
+  .menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .menu-item {
+    text-align: center;
+  }
+  
+  .menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .menu-item p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .menu-item a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .menu-item a:hover {
+    opacity: 0.8;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  /* Back button styles */
+.back-button-container {
+    margin: 20px;
+  }
+  
+  .back-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .back-button:hover {
+    background-color: #e65b54;
+  }
+  
+  /* Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+  
+  .form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-container label {
+    font-size: 16px;
+  }
+  
+  .form-container input, .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container input[type="submit"] {
+    background-color: #ff6f61;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .form-container input[type="submit"]:hover {
+    background-color: #e65b54;
+  }
+  
+  /* Order Form Link Styles */
+.order-form-link {
+    font-size: 20px; /* 修改字号 */
+    color: white;    /* 修改颜色 */
+    font-weight: bold; /* 加粗 */
+    text-decoration: none; /* 去掉下划线 */
+  }
+  
+  .order-form-link:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
+  }
+  
+  .menu-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-content ul li {
+    margin-bottom: 20px; /* 增加行与行之间的距离 */
+  }
+  
+  .order-button {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .order-button:hover {
+    background-color: #e65b54;
+  }
+  

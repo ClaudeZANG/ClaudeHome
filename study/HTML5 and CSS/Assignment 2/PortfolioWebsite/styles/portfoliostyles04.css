@@ -1,0 +1,162 @@
+/* 
+    portfoliostyles04.css 
+    Name: Chuanjie ZANG
+    Date: [Insert Date]
+*/
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+button, a {
+    padding: 10px 15px;
+    font-size: 16px; /* 增加按钮的字体和点击区域 */
+}
+
+/* Navigation styles */
+header nav ul {
+    list-style-type: none;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+header nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Container for central content */
+.container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Introduction section styling */
+.intro {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* About section with photo */
+.photo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.photo img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Projects section layout */
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.project {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .float-left {
+        float: none;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    /* Project cards in mobile view */
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 100%; /* 在小屏幕上，项目卡片将全宽显示 */
+        margin-bottom: 20px;
+    }
+
+    /* Navigation styles for smaller screens */
+    nav ul {
+        display: block; /* 导航菜单垂直排列 */
+        text-align: left;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0; /* 每个菜单项之间增加间距 */
+    }
+
+    .background-picture {
+        display: none; /* 隐藏背景图 */
+    }
+
+    /* Ensure text is more readable on smaller screens */
+    body {
+        font-size: 16px; /* 增加字体大小，确保移动端可读性 */
+    }
+    
+    /* Adjust the image sizes */
+    .photo img, .project img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
