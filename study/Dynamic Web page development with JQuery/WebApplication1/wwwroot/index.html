@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("p").css("color", "blue");  // 选择所有 <p> 元素并设置颜色
+            $("p:first").css("font-weight", "bold");  // 设置第一个 <p> 的字体加粗
+            $("p").append(" - Extra text");  // 追加文本到所有 <p> 中
+        });
+    </script>
+</head>
+<body>
+    <p>这是第一段文本。</p>
+    <p>这是第二段文本。</p>
+</body>
+</html>

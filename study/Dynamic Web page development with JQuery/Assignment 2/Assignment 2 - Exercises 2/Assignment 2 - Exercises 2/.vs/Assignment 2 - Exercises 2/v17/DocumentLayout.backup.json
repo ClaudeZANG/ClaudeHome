@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Assignment 2\\Assignment 2 - Exercises 2\\Assignment 2 - Exercises 2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CF893AA7-A6D3-483E-B5F4-89411BE48777}|Assignment 2 - Exercises 2.csproj|c:\\users\\chuan\\onedrive\\s\\study\\dynamic web page development with jquery\\assignment 2\\assignment 2 - exercises 2\\assignment 2 - exercises 2\\wwwroot\\htmlpage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF893AA7-A6D3-483E-B5F4-89411BE48777}|Assignment 2 - Exercises 2.csproj|solutionrelative:wwwroot\\htmlpage.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "htmlpage.html",
+              "DocumentMoniker": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Assignment 2\\Assignment 2 - Exercises 2\\Assignment 2 - Exercises 2\\wwwroot\\htmlpage.html",
+              "RelativeDocumentMoniker": "wwwroot\\htmlpage.html",
+              "ToolTip": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Assignment 2\\Assignment 2 - Exercises 2\\Assignment 2 - Exercises 2\\wwwroot\\htmlpage.html",
+              "RelativeToolTip": "wwwroot\\htmlpage.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-09-17T15:20:18.984Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

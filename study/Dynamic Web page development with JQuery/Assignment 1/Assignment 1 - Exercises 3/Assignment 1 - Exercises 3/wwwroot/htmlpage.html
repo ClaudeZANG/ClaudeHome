@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercises 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#check1").change(function () {
+                alert("The checked property of a checkbox: " + $(this).attr("checked") +
+                    "\nThe checked state of a checkbox:  " + $(this).prop("checked"));
+            });
+        });
+    </script>
+</head>
+<body>
+    <input id="check1" type="checkbox" checked="checked">
+    <label for="check1">Check me</label>
+</body>
+</html>

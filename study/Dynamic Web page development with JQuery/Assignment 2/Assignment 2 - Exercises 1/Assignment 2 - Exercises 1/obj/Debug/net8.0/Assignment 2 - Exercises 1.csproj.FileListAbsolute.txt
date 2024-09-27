@@ -1,0 +1,27 @@
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\appsettings.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\Assignment 2 - Exercises 1.staticwebassets.runtime.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\Assignment 2 - Exercises 1.exe
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\Assignment 2 - Exercises 1.deps.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\Assignment 2 - Exercises 1.runtimeconfig.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\Assignment 2 - Exercises 1.dll
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\bin\Debug\net8.0\Assignment 2 - Exercises 1.pdb
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.AssemblyInfoInputs.cache
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.AssemblyInfo.cs
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.csproj.CoreCompileInputs.cache
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.sourcelink.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\staticwebassets\msbuild.Assignment 2 - Exercises 1.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\staticwebassets\msbuild.build.Assignment 2 - Exercises 1.props
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Assignment 2 - Exercises 1.props
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Assignment 2 - Exercises 1.props
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\scopedcss\bundle\Assignment 2 - Exercises 1.styles.css
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.dll
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\refint\Assignment 2 - Exercises 1.dll
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.pdb
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\Assignment 2 - Exercises 1.genruntimeconfig.cache
+C:\Users\chuan\OneDrive\s\study\Dynamic Web page development with JQuery\Assignment 2\Assignment 2 - Exercises 1\Assignment 2 - Exercises 1\obj\Debug\net8.0\ref\Assignment 2 - Exercises 1.dll

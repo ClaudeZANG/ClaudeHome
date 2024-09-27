@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#button").click(function() {
+                $("#div1").fadeOut().delay(1000).fadeIn();  // Delay the first div by 1 second
+                $("#div2").fadeOut().fadeIn();  // No delay for the second div
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div1" style="width:100px;height:100px;background-color:red;"></div>
+    <div id="div2" style="width:100px;height:100px;background-color:blue;margin-top:10px;"></div>
+    <button id="button">Click to Show and Hide</button>
+</body>
+</html>

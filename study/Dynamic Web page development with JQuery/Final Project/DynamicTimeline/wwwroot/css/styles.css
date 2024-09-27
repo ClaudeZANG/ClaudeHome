@@ -1,0 +1,14 @@
+﻿.timeline {
+    padding: 20px;
+}
+
+.timeline__event {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.timeline__event--new {
+    color: red; 
+    display: none; 
+}

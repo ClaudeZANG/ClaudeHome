@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Assignment 2\\Assignment 2 - Exercises 1\\Assignment 2 - Exercises 1\\wwwroot\\htmlpage.html",
+      "PackagePath": "staticwebassets\\htmlpage.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Assignment 2 - Exercises 1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Assignment 2 - Exercises 1.props",
+      "PackagePath": "build\\Assignment 2 - Exercises 1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Assignment 2 - Exercises 1.props",
+      "PackagePath": "buildMultiTargeting\\Assignment 2 - Exercises 1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Assignment 2 - Exercises 1.props",
+      "PackagePath": "buildTransitive\\Assignment 2 - Exercises 1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

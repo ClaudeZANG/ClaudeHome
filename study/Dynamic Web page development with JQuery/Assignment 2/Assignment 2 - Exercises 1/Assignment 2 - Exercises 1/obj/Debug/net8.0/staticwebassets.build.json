@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "ZUHikkFUApsHeYzpFvlnjly3fPoRWpLwFYRxyoKeU6Q=",
+  "Source": "Assignment 2 - Exercises 1",
+  "BasePath": "_content/Assignment 2 - Exercises 1",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Assignment 2 - Exercises 1\\wwwroot",
+      "Source": "Assignment 2 - Exercises 1",
+      "ContentRoot": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Assignment 2\\Assignment 2 - Exercises 1\\Assignment 2 - Exercises 1\\wwwroot\\",
+      "BasePath": "_content/Assignment 2 - Exercises 1",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Assignment 2\\Assignment 2 - Exercises 1\\Assignment 2 - Exercises 1\\wwwroot\\htmlpage.html",
+      "SourceId": "Assignment 2 - Exercises 1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Assignment 2\\Assignment 2 - Exercises 1\\Assignment 2 - Exercises 1\\wwwroot\\",
+      "BasePath": "_content/Assignment 2 - Exercises 1",
+      "RelativePath": "htmlpage.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\htmlpage.html"
+    }
+  ]
+}

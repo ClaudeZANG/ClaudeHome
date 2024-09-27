@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Exercises 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("textarea, input").blur(function() {
+                $("p").text("Focus is removed from an element.");
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <textarea rows="4" cols="50">Hello, this is a test.</textarea>
+            <input type="button" value="Input Button">
+        </fieldset>
+    </form>
+    <p></p>
+</body>
+</html>

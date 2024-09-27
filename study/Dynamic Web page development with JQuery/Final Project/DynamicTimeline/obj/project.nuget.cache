@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "PdRG3VU34u0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chuan\\OneDrive\\s\\study\\Dynamic Web page development with JQuery\\Final Project\\DynamicTimeline\\DynamicTimeline.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chuan\\.nuget\\packages\\jquery\\3.7.1\\jquery.3.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}

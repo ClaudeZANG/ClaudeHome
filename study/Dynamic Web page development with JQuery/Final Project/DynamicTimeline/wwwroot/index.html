@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Life Timeline</title>
+    <style>
+        /* Timeline container styling */
+        .timeline {
+            padding: 20px;
+            border-left: 2px solid #333;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Event styling */
+        .timeline__event {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer; /* Pointer indicates clickable events */
+            display: none; /* Hide all events by default */
+        }
+
+            /* Hover effect on events */
+            .timeline__event:hover {
+                background-color: #e0e0e0; /* Highlight event on hover */
+            }
+
+        /* Styling for new events */
+        .timeline__event--new {
+            color: red; /* New events appear in red */
+        }
+
+        /* Responsive design for mobile screens */
+        @media (max-width: 768px) {
+            .timeline {
+                max-width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1 style="text-align:center;">My Life Timeline</h1>
+
+    <div class="timeline">
+        <div class="timeline__event" id="birth">Born: July 14, 1991</div>
+        <div class="timeline__event" id="primary">Started Primary School: September 1997</div>
+        <div class="timeline__event" id="middle">Started Middle School: September 2003</div>
+        <div class="timeline__event" id="high">Started High School: September 2006</div>
+        <div class="timeline__event" id="university">Graduated from University: June 2015</div>
+        <div class="timeline__event timeline__event--new" id="newEvent1">Started First Job: September 2015</div>
+        <div class="timeline__event timeline__event--new" id="newEvent2">Promoted to Manager: March 2020</div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            displayAllEvents(); // Display all events with animation on page load
+
+            // Add click event handler to all events
+            $(".timeline__event").on("click", function () {
+                // Get the ID of the clicked event
+                let eventId = $(this).attr("id");
+                alert("You clicked on: " + eventId);
+            });
+        });
+
+        function displayAllEvents() {
+            // Select all events and show them one by one with a delay
+            $(".timeline__event").each(function (index) {
+                $(this).delay(index * 500).fadeIn(1000); // Delay each event by 500ms and fade in over 1 second
+            });
+        }
+    </script>
+
+</body>
+</html>
